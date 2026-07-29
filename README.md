@@ -1,4 +1,4 @@
-# Anti-Nuke Sentinel Bot
+# Anti-Nuke (CWC Introduce) 
 
 Bot Discord bảo vệ server khỏi kiểu tấn công "bot/tài khoản giả danh anti-nuke":
 được cấp quyền cao rồi âm thầm xóa kênh, xóa role, ban/kick hàng loạt để phá server.
@@ -76,3 +76,5 @@ anti-nuke-bot/
 ├── .gitignore
 └── README.md
 ```
+
+## Bản Termux thì cài đặt tương tự (bản này chạy cho github codespace,còn termux phải nhờ Genimi hoặc claude để hướng dẫn cài đặt)
