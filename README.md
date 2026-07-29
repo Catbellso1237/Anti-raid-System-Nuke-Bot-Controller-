@@ -77,4 +77,7 @@ anti-nuke-bot/
 └── README.md
 ```
 
-## Bản Termux thì cài đặt tương tự (bản này chạy cho github codespace,còn termux phải nhờ Genimi hoặc claude để hướng dẫn cài đặt)
+## Các Bản Mà Code Bot này Hỗ Trợ 
+- Termux: Yêu Cầu Phiên Bản đã Cài Plugin Discord (cho Termux) Và Phiên Bản Python sẽ là py3 (yêu cầu,tùy lúc bạn run được termux bao nhiêu giờ treo)
+- Github Codespace:Như Trên,làm theo hướng dẫn (Giới Hạn Chạy 24/7)
+- Windows (CMD Yêu Cầu Gitclone,sau đó,nếu muốn chạy code này trên phiên bản Windows,bạn nên chắc chắn rằng Windows cmd sẽ rối hơn so với github codespace và termux,nếu đã có thể cài được,hãy nhớ rằng bot treo trên cmd bắt buộc là 24/7!
