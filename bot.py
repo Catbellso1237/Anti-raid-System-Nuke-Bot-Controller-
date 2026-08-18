@@ -21,6 +21,7 @@ INTENTS = discord.Intents.default()
 INTENTS.members = True  # cần để lấy member object khi tước quyền/ban
 INTENTS.guilds = True
 INTENTS.moderation = True  # audit log / ban events
+INTENTS.message_content = True  # bắt buộc để đọc nội dung lệnh prefix ("!", "?")
 
 
 class AntiNukeBot(commands.Bot):
@@ -32,6 +33,8 @@ class AntiNukeBot(commands.Bot):
         self.http_session = aiohttp.ClientSession()
         await self.load_extension("cogs.anti_nuke")
         logger.info("Đã tải cog anti_nuke")
+        await self.load_extension("cogs.emoji_manager")
+        logger.info("Đã tải cog emoji_manager")
 
     async def close(self):
         if self.http_session:

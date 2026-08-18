@@ -104,6 +104,36 @@ python bot.py
 | `!status` | Ai cũng dùng được | Xem trạng thái bảo vệ hiện tại |
 | `!unlock` | Chỉ TRUSTED_IDS | Mở khóa server sau khi kiểm tra an toàn |
 | `!trust <user_id>` | Chỉ TRUSTED_IDS | Thêm ID vào whitelist tạm thời (nhớ cập nhật `.env` để giữ vĩnh viễn) |
+| `?emoji` | Chỉ TRUSTED_IDS | Mở **panel quản lý Application Emoji** (xem mục bên dưới) |
+
+## Quản lý Emoji liên kết Discord Developer Portal (`?emoji`)
+
+Cog `cogs/emoji_manager.py` quản lý **Application Emoji** — loại emoji gắn liền
+với chính con bot (application), hiển thị trong **Discord Developer Portal →
+ứng dụng của bạn → mục "Emojis"**. Khác với emoji thường gắn vào 1 server,
+loại này thuộc về bot và bot có thể dùng ở **bất kỳ server nào nó có mặt**.
+
+**Cách dùng:** gõ đúng `?emoji` (tiền tố riêng `?`, không dùng chung `!` của
+các lệnh khác) trong kênh Discord — bot sẽ mở ra một **panel** gồm các nút:
+
+| Nút | Chức năng |
+|---|---|
+| ➕ Thêm | Mở form (modal) nhập **Tên** + **URL ảnh** để tạo emoji mới (PNG/JPG/GIF, tối đa 256KB) |
+| ✏️ Đổi tên | Mở menu chọn 1 emoji có sẵn rồi mở form nhập tên mới |
+| 🗑️ Xóa | Mở menu chọn 1 emoji, yêu cầu xác nhận trước khi xóa |
+| 🔄 Làm mới | Tải lại danh sách emoji mới nhất từ Developer Portal |
+| ✖️ Đóng | Khóa toàn bộ nút, đóng panel |
+
+Toàn bộ thao tác **chỉ dùng nút bấm / menu chọn / form nhập liệu** của
+Discord — không cần gõ thêm lệnh text nào sau `?emoji`.
+
+**Quyền sử dụng:** chỉ tài khoản trong `TRUSTED_IDS` (hoặc chủ sở hữu bot)
+mới thấy và dùng được panel này, vì Application Emoji ảnh hưởng tới **toàn
+bộ bot** ở mọi server, không giới hạn trong 1 server như emoji thường.
+
+**Lưu ý:** cần bật intent **Message Content** trong Developer Portal của
+bot (Bot → Privileged Gateway Intents → Message Content Intent) thì bot mới
+đọc được lệnh `?emoji`.
 
 ## Lưu ý chung
 
@@ -123,6 +153,7 @@ anti-nuke-bot/
 ├── bot.py                           # entry point
 ├── config.py                        # đọc biến môi trường
 ├── cogs/anti_nuke.py                # logic phát hiện & phản ứng
+├── cogs/emoji_manager.py            # panel quản lý Application Emoji ("?emoji")
 ├── requirements.txt
 ├── .env.example
 ├── .gitignore
